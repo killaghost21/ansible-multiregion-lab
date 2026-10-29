@@ -1,0 +1,16 @@
+---
+- name: Crear usuario de administracion ansible
+  ansible.builtin.user:
+    name: ansible
+    shell: /bin/bash
+    groups: sudo
+    append: true
+    create_home: true
+  become: true
+
+- name: Autorizar la llave publica para el usuario ansible
+  ansible.posix.authorized_key:
+    user: ansible
+    state: present
+    key: "{{ lookup('file', pubkey_path) }}"
+  become: true

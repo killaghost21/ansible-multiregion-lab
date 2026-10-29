@@ -1,0 +1,6 @@
+---
+- name: Aplicar rol baseline
+  hosts: vm
+  gather_facts: false
+  roles:
+    - baseline
