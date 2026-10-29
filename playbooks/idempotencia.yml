@@ -1,0 +1,10 @@
+---
+- name: Prueba de idempotencia con copy
+  hosts: vm
+  gather_facts: false
+  tasks:
+    - name: Crear archivo de prueba en la VM
+      ansible.builtin.copy:
+        content: "Lab Ansible, sesion 2\n"
+        dest: /tmp/lab-idempotencia.txt
+        mode: "0644"

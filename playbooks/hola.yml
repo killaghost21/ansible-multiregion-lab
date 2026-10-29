@@ -1,0 +1,8 @@
+---
+- name: Mi primer playbook
+  hosts: vm
+  gather_facts: false
+  tasks:
+    - name: Mostrar el hostname del nodo
+      ansible.builtin.debug:
+        msg: "Hola desde {{ inventory_hostname }}"

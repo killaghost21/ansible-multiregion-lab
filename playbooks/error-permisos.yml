@@ -1,0 +1,9 @@
+---
+- name: Provocar un error de permisos
+  hosts: vm
+  gather_facts: false
+  tasks:
+    - name: Escribir en /etc sin become
+      ansible.builtin.copy:
+        content: "prueba\n"
+        dest: /etc/lab-test.txt

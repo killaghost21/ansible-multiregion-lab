@@ -1,0 +1,14 @@
+# Inventario generado con datos reales de tu entorno
+inventories/lab.ini
+inventories/hosts.ini
+
+# Llaves y secretos
+keys/
+*.pem
+id_ed25519*
+.vault_pass
+
+# Entorno virtual y caché
+.venv/
+__pycache__/
+*.pyc
